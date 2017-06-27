@@ -4,12 +4,15 @@ package myosolutions.pl.lynxperience;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 
 /**
  * Created by Jacek on 2017-06-06.
  */
 
 public abstract class BaseStateManager {
+
+    private static final String TAG = BaseStateManager.class.getSimpleName();
 
     public static final int EVENT_EXPERIENCE = 11;
     public static final int EVENT_EDUCATION = 12;
@@ -39,15 +42,16 @@ public abstract class BaseStateManager {
 
     private void addFragment(Fragment fragment, Bundle bundle) {
         Fragment oldFragment = getCurrentFragment();
+        Log.d(TAG, "addFramgment oldfragment is null " + String.valueOf(oldFragment == null));
         if (oldFragment == null) {
             fragment.setArguments(bundle);
             mFragmentManager.beginTransaction()
-                    .add(R.id.fragmentContainer, fragment)
+                    .add(R.id.fragment_container, fragment)
                     .commit();
         } else {
             fragment.setArguments(bundle);
             mFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainer, fragment)
+                    .replace(R.id.fragment_container, fragment)
                     .commit();
         }
     }
@@ -56,7 +60,7 @@ public abstract class BaseStateManager {
     protected abstract BaseState getInitialState();
 
     protected Fragment getCurrentFragment() {
-        return mFragmentManager.findFragmentById(R.id.fragmentContainer);
+        return mFragmentManager.findFragmentById(R.id.fragment_container);
     }
 
     public abstract class BaseState {

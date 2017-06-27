@@ -1,4 +1,5 @@
-<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,40 +12,63 @@
 
 
     <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        card_view:cardBackgroundColor="@color/cardview_light_background"
         card_view:cardCornerRadius="4dp">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background='@{bragItem.photo}'
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <TextView
-            android:id="@+id/tv_position_name"
-            android:gravity="center"
-            android:layout_gravity="top"
-            android:text='@{bragItem.description}'
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/tv_brag_description"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_gravity="center_vertical"
-            android:text='@{bragItem.description}'
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:alpha="0.9"
+                android:src='@{bragItem.photo}' />
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/tv_position_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0px"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text='@{bragItem.title}'
+                    android:textAppearance="@color/colorAccent"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_brag_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0px"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="5"
+                    android:text='@{bragItem.description}'
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 </layout>

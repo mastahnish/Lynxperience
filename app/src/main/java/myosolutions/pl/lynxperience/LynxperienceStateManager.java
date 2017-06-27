@@ -5,13 +5,14 @@ import android.support.v4.app.FragmentManager;
 import myosolutions.pl.lynxperience.fragments.EducationFragment;
 import myosolutions.pl.lynxperience.fragments.ExperienceFragment;
 import myosolutions.pl.lynxperience.fragments.MapFragment;
-import myosolutions.pl.lynxperience.fragments.WelcomeFragment;
 
 /**
  * Created by Jacek on 2017-06-20.
  */
 
 public class LynxperienceStateManager extends BaseStateManager  {
+
+    private static final String TAG = LynxperienceStateManager.class.getSimpleName();
 
     private static LynxperienceStateManager mInstance;
 
@@ -55,7 +56,9 @@ public class LynxperienceStateManager extends BaseStateManager  {
     private class MainState extends BaseState{
         @Override
         public void enter() {
-            addNewFragment(new WelcomeFragment());
+
+
+            addNewFragment(new ExperienceFragment());
         }
 
         @Override

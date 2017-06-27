@@ -14,14 +14,14 @@ import myosolutions.pl.lynxperience.databinding.BragItemBinding;
  * Created by Jacek on 2017-06-27.
  */
 
-public class BragAdapter extends RecyclerView.Adapter<BragAdapter.BragItemsViewHolder>{
+public class BragAdapter extends RecyclerView.Adapter<BragAdapter.BragItemsViewHolder> {
 
     private List<BragItem> mData;
 
     private OnItemClickListener mOnItemClickListener;
 
     public BragAdapter(OnItemClickListener listener) {
-        mOnItemClickListener = listener;
+        this.mOnItemClickListener = listener;
     }
 
     public void setData(List<BragItem> data) {
@@ -42,25 +42,25 @@ public class BragAdapter extends RecyclerView.Adapter<BragAdapter.BragItemsViewH
     }
 
 
-
     @Override
     public int getItemCount() {
         return mData != null ? mData.size() : 0;
     }
 
-    class BragItemsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class BragItemsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         BragItemBinding mBinding;
 
         BragItemsViewHolder(View itemView) {
             super(itemView);
             mBinding = DataBindingUtil.bind(itemView);
+            itemView.setOnClickListener(this);
         }
 
-            @Override
-            public void onClick(View v) {
-                mOnItemClickListener.onItemClick(mData.get(getAdapterPosition()));
-            }
+        @Override
+        public void onClick(View v) {
+            mOnItemClickListener.onItemClick(mData.get(getAdapterPosition()));
+        }
     }
 
 
