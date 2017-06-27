@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Lynxperience</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="experience">Experience</string>
+    <string name="education">Education</string>
+    <string name="map">Map</string>
+    <string name="find_me">Find me</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_my_android_cv">Welcome to my Android CV</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_experience"
+            android:icon="@android:drawable/ic_media_rew"
+            android:title="@string/experience" />
+        <item
+            android:id="@+id/nav_education"
+            android:icon="@android:drawable/ic_media_previous"
+            android:title="@string/education" />
+    </group>
+
+    <item android:title="@string/find_me">
+        <menu>
+            <item
+                android:id="@+id/nav_map"
+                android:icon="@android:drawable/ic_dialog_map"
+                android:title="@string/map" />
+
+        </menu>
+    </item>
+
+</menu>
