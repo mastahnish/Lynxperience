@@ -8,4 +8,4 @@
 
 #Check out lynxperience.apk for testing.
 
-![alt text](https://raw.githubusercontent.com/mastahnish/Lynxperience/blob/master/ezgif.com-resize.gif)
+![alt text](https://raw.github.com/mastahnish/Lynxperience/blob/master/ezgif.com-resize.gif)
